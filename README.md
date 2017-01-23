@@ -1,6 +1,13 @@
 App Template
 ============
 
+Toolchain/Features
+------------------
+
+* Build system: make & webpack
+* Language: Typescript (with JSX)
+* View: React
+
 Requirements
 ------------
 
