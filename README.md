@@ -8,6 +8,7 @@ Toolchain/Features
 * Language: Typescript (with JSX)
 * View: React
 * Stylesheets: SASS
+* Code quality: tslint
 
 Requirements
 ------------
