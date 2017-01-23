@@ -9,6 +9,7 @@ Toolchain/Features
 * View: React
 * Stylesheets: SASS
 * Code quality: tslint
+* Configured for Visual Studio Code
 
 Requirements
 ------------
