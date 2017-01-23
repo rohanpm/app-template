@@ -5,5 +5,14 @@
   "main": "index.js",
   "repository": "https://github.com/rohanpm/app-template",
   "author": "Rohan McGovern <rohan@mcgovern.id.au>",
-  "license": "GPL-3.0+"
+  "license": "GPL-3.0+",
+  "dependencies": {
+    "@types/react": "^15.0.1",
+    "@types/react-dom": "^0.14.20",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "webpack": "^1.14.0"
+  }
 }
