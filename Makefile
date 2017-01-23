@@ -11,6 +11,10 @@ node_modules: package.json
 dist/bundle.js: node_modules
 	$(NPM) run webpack
 
+.PHONY: dev-server
+dev-server: node_modules
+	$(NPM) run dev-server
+
 .PHONY: distclean
 distclean:
 	$(RM) -rf node_modules
