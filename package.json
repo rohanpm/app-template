@@ -1,0 +1,9 @@
+{
+  "name": "app-template",
+  "version": "1.0.0",
+  "description": "A template for simple browser applications",
+  "main": "index.js",
+  "repository": "https://github.com/rohanpm/app-template",
+  "author": "Rohan McGovern <rohan@mcgovern.id.au>",
+  "license": "GPL-3.0+"
+}
