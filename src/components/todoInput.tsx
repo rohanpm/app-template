@@ -11,7 +11,7 @@ interface OwnProps {
 interface DispatchProps {
     appendTodo: Function;
 }
-interface Props extends OwnProps, DispatchProps { };
+interface Props extends OwnProps, DispatchProps { }
 
 interface State {
     value: string;

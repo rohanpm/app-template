@@ -15,6 +15,10 @@ dist/bundle.js: node_modules
 dev-server: node_modules
 	$(NPM) run dev-server
 
+.PHONY: check
+check: node_modules
+	$(NPM) run tslint -- "src/**/*.tsx" "src/**/*.ts"
+
 .PHONY: distclean
 distclean:
 	$(RM) -rf node_modules

@@ -6,7 +6,7 @@ export function setTodoStatus(todoItem: TodoItem, status: TodoStatus): ActionTyp
     return {
         type: ActionTypes.SET_TODO_STATUS,
         todoItem,
-        status
+        status,
     };
 }
 
@@ -18,7 +18,7 @@ export const toggleTodo = (item: TodoItem) =>
 export function appendTodo(description: string): ActionTypes.AppendTodoAction {
     return {
         type: ActionTypes.APPEND_TODO,
-        description
+        description,
     };
 }
 

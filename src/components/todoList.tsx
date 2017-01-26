@@ -14,7 +14,7 @@ interface DispatchProps {
     toggleTodo: Function;
     removeTodo: Function;
 }
-interface Props extends OwnProps, DispatchProps {};
+interface Props extends OwnProps, DispatchProps {}
 
 function doRenderItem(toggleTodo: Function, removeTodo: Function, item: State.TodoItem, index: number) {
     const toggler = (event: any) => {

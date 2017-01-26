@@ -9,7 +9,7 @@ type TodoAction = AppendTodoAction | SetTodoStatusAction | RemoveTodoAction;
 function append(state: TodoList, action: AppendTodoAction): TodoList {
     const item = {
         text: action.description,
-        status: TodoStatus.Pending
+        status: TodoStatus.Pending,
     };
     return state.concat([item]);
 }

@@ -1,4 +1,5 @@
 {
+    "rulesDirectory": ["node_modules/tslint-eslint-rules/dist/rules"],
     "jsRules": {
         "class-name": true,
         "comment-format": [
@@ -58,6 +59,8 @@
         "no-trailing-whitespace": true,
         "no-unsafe-finally": true,
         "no-var-keyword": true,
+        "no-extra-semi": true,
+        "no-empty": true,
         "one-line": [
             true,
             "check-open-brace",
@@ -96,6 +99,10 @@
             "check-operator",
             "check-separator",
             "check-type"
+        ],
+        "trailing-comma": [
+            true,
+            {"multiline": "always", "singleline": "never"}
         ]
     }
 }
