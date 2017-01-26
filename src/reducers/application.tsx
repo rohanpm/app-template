@@ -1,6 +1,5 @@
-interface ApplicationState {
-};
+import { combineReducers } from "redux";
 
-export function appReducer(state: ApplicationState) {
-    return state;
-}
+import { todo } from "./todo";
+
+export const appReducer = combineReducers({ todo });
