@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 
-import {AppendTodoAction, SetTodoStatusAction, APPEND_TODO, SET_TODO_STATUS} from "../actionTypes";
+import {AppendTodoAction, SetTodoStatusAction, RemoveTodoAction, APPEND_TODO, SET_TODO_STATUS, REMOVE_TODO} from "../actionTypes";
 import {TodoItem, TodoStatus} from "../state";
 
 type TodoList = TodoItem[];
-type TodoAction = AppendTodoAction | SetTodoStatusAction;
+type TodoAction = AppendTodoAction | SetTodoStatusAction | RemoveTodoAction;
 
 function append(state: TodoList, action: AppendTodoAction): TodoList {
     const item = {
@@ -24,12 +24,19 @@ function setStatus(state: TodoList, action: SetTodoStatusAction): TodoList {
     });
 }
 
+function remove(state: TodoList, action: RemoveTodoAction): TodoList {
+    return state.filter((item) => item !== action.todoItem);
+}
+
 function items(state: TodoList = [], action: TodoAction): TodoList {
     if (action.type === APPEND_TODO) {
         return append(state, action as AppendTodoAction);
     }
     if (action.type === SET_TODO_STATUS) {
         return setStatus(state, action as SetTodoStatusAction);
+    }
+    if (action.type === REMOVE_TODO) {
+        return remove(state, action as RemoveTodoAction);
     }
     return state;
 }

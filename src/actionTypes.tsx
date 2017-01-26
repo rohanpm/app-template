@@ -5,6 +5,7 @@ import * as State from "./state";
 export const APPEND_SAMPLE_ITEM = "APPEND_SAMPLE_ITEM";
 export const APPEND_TODO = "APPEND_TODO";
 export const SET_TODO_STATUS = "SET_TODO_STATUS";
+export const REMOVE_TODO = "REMOVE_TODO";
 
 export interface DatedAction extends Action {
     payload: Date;
@@ -24,3 +25,6 @@ export interface SetTodoStatusAction extends ModifyTodoAction {
     status: State.TodoStatus;
 }
 
+export interface RemoveTodoAction extends ModifyTodoAction {
+    type: "REMOVE_TODO";
+}

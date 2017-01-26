@@ -21,3 +21,10 @@ export function appendTodo(description: string): ActionTypes.AppendTodoAction {
         description
     };
 }
+
+export function removeTodo(todoItem: TodoItem): ActionTypes.RemoveTodoAction {
+    return {
+        todoItem,
+        type: ActionTypes.REMOVE_TODO,
+    };
+}
