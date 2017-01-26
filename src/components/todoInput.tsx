@@ -1,8 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import Input from "react-toolbox/lib/input";
-import { Button, IconButton } from "react-toolbox/lib/button";
-
 
 import { appendTodo } from "../actions/todo";
 
@@ -21,13 +19,13 @@ interface State {
 class TodoInputImpl extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
-        this.state = {value: ""};
+        this.state = { value: "" };
     }
 
     render() {
         return <Input
             value={this.state.value}
-            onChange={(value: string) => this.setState({value})}
+            onChange={(value: string) => this.setState({ value })}
             onKeyPress={this.handleKeyPress.bind(this)}
             label="New item..." />;
     }
@@ -37,7 +35,7 @@ class TodoInputImpl extends React.Component<Props, State> {
             return;
         }
         this.props.appendTodo(event.target.value);
-        this.setState({value: ""});
+        this.setState({ value: "" });
     }
 
 }

@@ -9,12 +9,8 @@ const MyStorage = {
     getAllKeys: localforage.keys,
     setItem: localforage.setItem,
     getItem: localforage.getItem,
-    removeItem: localforage.removeItem
+    removeItem: localforage.removeItem,
 };
-
-interface Window {
-    __REDUX_DEVTOOLS_EXTENSION__: any;
-}
 
 export function store() {
     console.log("Creating store.");

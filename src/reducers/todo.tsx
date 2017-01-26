@@ -1,7 +1,14 @@
 import { combineReducers } from "redux";
 
-import {AppendTodoAction, SetTodoStatusAction, RemoveTodoAction, APPEND_TODO, SET_TODO_STATUS, REMOVE_TODO} from "../actionTypes";
-import {TodoItem, TodoStatus} from "../state";
+import {
+    AppendTodoAction,
+    SetTodoStatusAction,
+    RemoveTodoAction,
+    APPEND_TODO,
+    SET_TODO_STATUS,
+    REMOVE_TODO,
+} from "../actionTypes";
+import { TodoItem, TodoStatus } from "../state";
 
 type TodoList = TodoItem[];
 type TodoAction = AppendTodoAction | SetTodoStatusAction | RemoveTodoAction;
@@ -18,7 +25,7 @@ function setStatus(state: TodoList, action: SetTodoStatusAction): TodoList {
     console.log("set status", action);
     return state.map((item): TodoItem => {
         if (item === action.todoItem) {
-            return Object.assign({}, item, {status: action.status});
+            return Object.assign({}, item, { status: action.status });
         }
         return item;
     });

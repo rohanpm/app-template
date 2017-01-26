@@ -1,8 +1,8 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { List, ListItem, ListItemContent, ListItemText, ListItemLayout } from "react-toolbox/lib/list";
+import { List, ListItem, ListItemText, ListItemLayout } from "react-toolbox/lib/list";
 import Checkbox from "react-toolbox/lib/checkbox";
-import {IconButton} from "react-toolbox/lib/button";
+import { IconButton } from "react-toolbox/lib/button";
 
 import { toggleTodo, removeTodo } from "../actions/todo";
 import * as State from "../state";
@@ -14,7 +14,7 @@ interface DispatchProps {
     toggleTodo: Function;
     removeTodo: Function;
 }
-interface Props extends OwnProps, DispatchProps {}
+interface Props extends OwnProps, DispatchProps { }
 
 function doRenderItem(toggleTodo: Function, removeTodo: Function, item: State.TodoItem, index: number) {
     const toggler = (event: any) => {
@@ -29,7 +29,7 @@ function doRenderItem(toggleTodo: Function, removeTodo: Function, item: State.To
     const checkbox = <Checkbox
         checked={item.status === State.TodoStatus.Done}
     />;
-    const remove = <IconButton onClick={remover} accent icon="delete"/>;
+    const remove = <IconButton onClick={remover} accent icon="delete" />;
     return <ListItem key={index} onClick={toggler}>
         <ListItemLayout
             leftActions={[checkbox]}

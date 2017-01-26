@@ -1,5 +1,7 @@
 {
-    "rulesDirectory": ["node_modules/tslint-eslint-rules/dist/rules"],
+    "rulesDirectory": [
+        "node_modules/tslint-eslint-rules/dist/rules"
+    ],
     "jsRules": {
         "class-name": true,
         "comment-format": [
@@ -102,7 +104,10 @@
         ],
         "trailing-comma": [
             true,
-            {"multiline": "always", "singleline": "never"}
+            {
+                "multiline": "always",
+                "singleline": "never"
+            }
         ]
     }
 }

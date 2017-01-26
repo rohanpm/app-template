@@ -1,11 +1,10 @@
 import * as React from "react";
-import {connect} from "react-redux";
-import {Button} from "react-toolbox/lib/button";
+import { connect } from "react-redux";
 
-import {TodoList} from "./todoList";
-import {TodoInput} from "./todoInput";
+import { TodoList } from "./todoList";
+import { TodoInput } from "./todoInput";
 import * as State from "../state";
-import {appendSampleItem} from "../actions/sample";
+import { appendSampleItem } from "../actions/sample";
 
 interface Props extends State.State {
     addItem: Function;
@@ -14,7 +13,7 @@ interface Props extends State.State {
 const ApplicationInner = ({todo, addItem}: Props) =>
     <div>
         <TodoList todo={todo.items} />
-        <TodoInput/>
+        <TodoInput />
     </div>;
 
 const stateToProps = (state: State.State) => state;
