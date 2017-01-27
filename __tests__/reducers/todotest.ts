@@ -1,6 +1,5 @@
 ///<reference path='../../node_modules/testcheck/dist/testcheck.d.ts'/>
 
-// import { Generator, gen } from "testcheck";
 import { check, property, gen as tcgen, Generator } from "testcheck";
 import { Action } from "redux";
 
