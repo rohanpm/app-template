@@ -14,14 +14,5 @@ export interface TodoState {
 
 export interface State {
     loaded: boolean;
-    items: Date[];
     todo: TodoState;
 }
-
-export const EMPTY_STATE: State = {
-    loaded: false,
-    items: [],
-    todo: {
-        items: [],
-    },
-};
