@@ -1,12 +1,18 @@
 App Template
 ============
 
+This is a template for development of a single-page HTML application.
+It is a toy "To Do list" application serving as a reference for a
+working toolchain and combination of libraries.
+
+
 Toolchain/Features
 ------------------
 
 * Build system: make & webpack
 * Language: Typescript (with JSX)
 * View: React
+* State: Redux, persisted in local storage (via localForage)
 * Stylesheets: SASS
 * Code quality: tslint
 * Autotests: jest, testcheck (with coverage report)
