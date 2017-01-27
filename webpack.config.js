@@ -1,3 +1,5 @@
+var failPlugin = require('webpack-fail-plugin');
+
 module.exports = {
     entry: "./src/index.tsx",
     output: {
@@ -5,7 +7,9 @@ module.exports = {
         path: __dirname + "/dist",
         publicPath: "/dist/",
     },
-
+    plugins: [
+        failPlugin
+    ],
     devServer: { inline: true },
 
     // Enable sourcemaps for debugging webpack's output.

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { connect } from "react-redux";
+import { connect, MapStateToProps } from "react-redux";
 import Input from "react-toolbox/lib/input";
 
 import { appendTodo } from "../actions/todo";
@@ -40,4 +40,7 @@ class TodoInputImpl extends React.Component<Props, State> {
 
 }
 
-export const TodoInput = connect(undefined, { appendTodo })(TodoInputImpl);
+export const TodoInput = connect(
+    () => { return {}; },
+    { appendTodo },
+)(TodoInputImpl);

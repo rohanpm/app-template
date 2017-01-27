@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { combineReducers, Reducer } from "redux";
 
 import {
     AppendTodoAction,
@@ -8,7 +8,7 @@ import {
     SET_TODO_STATUS,
     REMOVE_TODO,
 } from "../actionTypes";
-import { TodoItem, TodoStatus } from "../state";
+import { TodoItem, TodoStatus, TodoState } from "../state";
 
 type TodoList = TodoItem[];
 type TodoAction = AppendTodoAction | SetTodoStatusAction | RemoveTodoAction;
@@ -22,7 +22,6 @@ function append(state: TodoList, action: AppendTodoAction): TodoList {
 }
 
 function setStatus(state: TodoList, action: SetTodoStatusAction): TodoList {
-    console.log("set status", action);
     return state.map((item): TodoItem => {
         if (item === action.todoItem) {
             return Object.assign({}, item, { status: action.status });
@@ -35,7 +34,12 @@ function remove(state: TodoList, action: RemoveTodoAction): TodoList {
     return state.filter((item) => item !== action.todoItem);
 }
 
-function items(state: TodoList = [], action: TodoAction): TodoList {
+function items(state: TodoList, action: TodoAction): TodoList {
+    // FIXME: using ES2015 default arg for "state" causes "yarn jest"
+    // to fail compilation of tests, have not figured out why
+    if (typeof state === "undefined") {
+        state = [];
+    }
     if (action.type === APPEND_TODO) {
         return append(state, action as AppendTodoAction);
     }
@@ -48,4 +52,4 @@ function items(state: TodoList = [], action: TodoAction): TodoList {
     return state;
 }
 
-export const todo = combineReducers({ items });
+export const todo = combineReducers<TodoState>({ items });
