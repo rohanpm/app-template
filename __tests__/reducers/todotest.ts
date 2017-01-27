@@ -28,7 +28,7 @@ function unmodified(state: TodoState, action: Action) {
 
 function checkTest(name: string, argGens: Generator<any>[], propertyFn: (...args: any[]) => boolean) {
     test(name, () => {
-        const result = check(property(argGens, propertyFn));
+        const result = check(property(argGens, propertyFn), { times: 50 });
         expect(result).toMatchObject({ result: true });
     });
 }
