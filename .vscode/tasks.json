@@ -8,12 +8,41 @@
     "tasks": [
         {
             "taskName": "build",
-            "args": []
+            "args": [],
+            "isBuildCommand": true
         },
         {
             "taskName": "dev-server",
-            "args": ["dev-server"],
+            "args": [
+                "dev-server"
+            ],
             "isWatching": true
+        },
+        {
+            "taskName": "test",
+            "args": [
+                "test",
+                "TEST_ARGS=--watch --verbose"
+            ],
+            "isTestCommand": true,
+            "isWatching": true,
+            "problemMatcher": {
+                "fileLocation": "absolute",
+                "pattern": [
+                    {
+                        "regexp": "file:(/[^:]+):(\\d+):(\\d+)",
+                        "message": 1,
+                        "file": 1,
+                        "line": 2,
+                        "column": 3
+                    }
+                ],
+                "watching": {
+                    "activeOnStart": true,
+                    "beginsPattern": "_NEVER_MATCH_",
+                    "endsPattern": "^.*Ran all test suites related to changed files.*$"
+                }
+            }
         }
     ]
 }
