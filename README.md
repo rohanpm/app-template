@@ -35,3 +35,11 @@ Run `make distclean` to remove all build artifacts.
 
 Run `make check` to run checks (build, lint, autotests) and
 find coverage report in `coverage/remapped/html/index.html`.
+
+Recommended VS Code Extensions
+------------------------------
+
+These will work well with projects built from this template:
+
+* `tslint` - run tslint and show/auto-fix problems
+* `typescript-hero` - find/add/autocomplete importable symbols
